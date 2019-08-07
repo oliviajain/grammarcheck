@@ -1,5 +1,5 @@
 from flask import Flask, request, render_template
-from handwritingRecognition import convertToText, grammarAnalysis
+from apis import convertToText, grammarAnalysis
 
 app = Flask(__name__)
 
