@@ -45,37 +45,37 @@
 			{% endif %}
 
 			<h4> Summary </h4>
-			<p> {{totalErrors}} Total Errors </p>
+			<p> {{total_errors}} Total Errors </p>
 			<div class='w3-center'>
-			<table style="margin:1em auto">
-			<tr>
-			    <th>Error Type</th>
-			    <th>Count</th> 
-			</tr>
-			{% for error in errorCounts %}
-			<tr>
-			    <td>{{error[0]}}</td>
-			    <td>{{error[1]}}</td> 
-			</tr>
-			{% endfor %}
-			</table>
+				<table style="margin:1em auto">
+					<tr>
+					    <th>Error Type</th>
+					    <th>Count</th> 
+					</tr>
+					{% for error in error_counts %}
+					<tr>
+					    <td>{{error[0]}}</td>
+					    <td>{{error[1]}}</td> 
+					</tr>
+					{% endfor %}
+				</table>
 			</div>
 
 			<h4> Mistakes </h4>
 			<div class='w3-center'>
 				<table style="margin:1em auto">
-			  	<tr>
-			    	<th>Line Number</th>
-			    	<th>Error</th> 
-			    	<th>Suggestions</th>
-			  	</tr>
-			  	{% for mistake in mistakeInfo %}
-				<tr>
-					<td>{{mistake[0]}}</td>
-					<td>{{mistake[1]}}</td> 
-					<td>{{mistake[2]}}</td>
-				</tr>
-				{% endfor %}
+					<tr>
+					<th>Line Number</th>
+					<th>Error</th> 
+					<th>Suggestions</th>
+					</tr>
+					{% for mistake in mistake_info %}
+					<tr>
+						<td>{{mistake[0]}}</td>
+						<td>{{mistake[1]}}</td> 
+						<td>{{mistake[2]}}</td>
+					</tr>
+					{% endfor %}
 				</table>
 			</div>
 		</header>
