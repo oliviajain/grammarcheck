@@ -8,79 +8,78 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <style>
-body,h1 {font-family: "Raleway", Arial, sans-serif}
-h1 {letter-spacing: 6px}
-.w3-row-padding img {margin-bottom: 12px}
-img {
-	width:80%;
-}
-table {
-  border-collapse: collapse;
-}
+	body,h1 {
+		font-family: "Raleway", Arial, sans-serif
+	}
+	h1 {
+		letter-spacing: 6px
+	}
+	.w3-row-padding img {
+		margin-bottom: 12px
+	}
+	img {
+		width:80%;
+	}
+	table {
+	  border-collapse: collapse;
+	}
 
-td, th {
-  border: 1px solid;
-  padding: 8px;
-}
+	td, th {
+	  border: 1px solid;
+	  padding: 8px;
+	}
 
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
-
+	tr:nth-child(even) {
+	  background-color: #dddddd;
+	}
 </style>
+
 <body>
+	<div class="w3-content" style="max-width:1500px">
+		<header class="w3-panel w3-opacity w3-center" style="padding:128px 16px">
+			<h1 class="w3-xlarge">REPORT</h1>
+			{% if flag %}
+			<p> Please check on your student. Too many errors. </p>
+			{% endif %}
 
-<!-- !PAGE CONTENT! -->
-<div class="w3-content" style="max-width:1500px">
-<!-- Header -->
-<header class="w3-panel w3-opacity w3-center" style="padding:128px 16px">
-	<h1 class="w3-xlarge">REPORT</h1>
-	{% if flag %}
-	<p> Please check on your student. Too many errors. </p>
-	{% endif %}
+			<h4> Summary </h4>
+			<p> {{totalErrors}} Total Errors </p>
+			<div class='w3-center'>
+			<table style="margin:1em auto">
+			<tr>
+			    <th>Error Type</th>
+			    <th>Count</th> 
+			</tr>
+			{% for error in errorCounts %}
+			<tr>
+			    <td>{{error[0]}}</td>
+			    <td>{{error[1]}}</td> 
+			</tr>
+			{% endfor %}
+			</table>
+			</div>
 
-	<h4> Summary </h4>
-	<p> {{total_errors}} Total Errors </p>
-	<div class='w3-center'>
-	<table style="margin:1em auto">
-	<tr>
-	    <th>Error Type</th>
-	    <th>Count</th> 
-	</tr>
-	{% for error in error_counts %}
-	<tr>
-	    <td>{{error[0]}}</td>
-	    <td>{{error[1]}}</td> 
-	</tr>
-	{% endfor %}
-	</table>
+			<h4> Mistakes </h4>
+			<div class='w3-center'>
+				<table style="margin:1em auto">
+			  	<tr>
+			    	<th>Line Number</th>
+			    	<th>Error</th> 
+			    	<th>Suggestions</th>
+			  	</tr>
+			  	{% for mistake in mistakeInfo %}
+				<tr>
+					<td>{{mistake[0]}}</td>
+					<td>{{mistake[1]}}</td> 
+					<td>{{mistake[2]}}</td>
+				</tr>
+				{% endfor %}
+				</table>
+			</div>
+		</header>
 	</div>
-
-	<h4> Mistakes </h4>
-	<div class='w3-center'>
-		<table style="margin:1em auto">
-	  	<tr>
-	    	<th>Line Number</th>
-	    	<th>Error</th> 
-	    	<th>Suggestions</th>
-	  	</tr>
-	  	{% for mistake in mistake_info %}
-		<tr>
-			<td>{{mistake[0]}}</td>
-			<td>{{mistake[1]}}</td> 
-			<td>{{mistake[2]}}</td>
-		</tr>
-		{% endfor %}
-		</table>
-	</div>
-
-	<img src={{url_for('static', filename='output.png')}}>
-
-</header>
-  
-<!-- End Page Content -->
-</div>
-
 </body>
+
 </html>
