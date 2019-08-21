@@ -2,7 +2,7 @@
 
 Using Microsoft Cognitive Vision API to detect text, and then GrammarBot API to detect and classify spelling and grammar errors.   
 
-**Student paper** . 
+**0. Student paper.**
 ![](static/output.png)
 
 **1. Upload a student paper.**
