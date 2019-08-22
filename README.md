@@ -1,6 +1,6 @@
 # Grammar Check
 
-Using Microsoft Cognitive Vision API to detect text, and then GrammarBot API to detect and classify spelling and grammar errors.   
+Using Microsoft Cognitive Vision API to detect handwritten text, and then GrammarBot API to detect and classify spelling and grammar errors.   
 
 **1. Write down text.**   
 ![](static/output.png)
